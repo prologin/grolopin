@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block script %}<script src="/static/js/map.js"></script>{% endblock %}
+
+{% block init %}init(){% endblock %}
+
+{% block content %}
+<h1>GATE OF STEINER</h1>
+<canvas id="grolopin" width="1000" height="600" onmousemove="move(event.clientX, event.clientY)"></canvas>
+<aside>
+	<h2>Lopins</h2>
+    {% for item in range(4) %}
+    	<span class="label" style="background: {{ colors[item] }}; color: black;"><span id="nb{{item}}">0</span> / {{sizes[item]}}</span>
+    	{% if available[item] %}
+    		<a href="/surprise?num={{ item }}" class="label" style="background: {{ colors[item] }}; color: black;">Surprise !</a>
+    	{% endif %}
+    	<br />
+    {% endfor %}
+    <h2>Classement</h2>
+    <table id="ranking">
+    </table>
+</aside>
+{% endblock %}

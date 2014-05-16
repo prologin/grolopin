@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block script %}<script src="/static/js/pins.js"></script>{% endblock %}
+
+{% block init %}init(){% endblock %}
+
+{% block content %}
+<h1>Soumettre des pin's</h1>
+<div id='register' class='well form-inline'>
+	<input id='pseudo' type="text" placeholder="Pseudo..."/>
+	<input id='email' type="text" placeholder="Email..."/>
+	<button class="btn btn-primary" onclick="register($('#pseudo').attr('value'), $('#email').attr('value'))">S'inscrire</button>
+</div>
+<textarea id="pins" rows="13"></textarea>
+<div id="clear: both">
+	<div>
+		<button class="btn" onclick="$('#pins').attr('value', 'o o\noo\no'); tryPins($('#pins').attr('value'))">Exemple 1</button>
+		<button class="btn" onclick="$('#pins').attr('value', 'ooo\no  oo\n   o oo'); tryPins($('#pins').attr('value'))">Exemple 2</button>
+		<button class="btn" onclick="$('#pins').attr('value', 'ooo\no  oo\n oo o'); tryPins($('#pins').attr('value'))">Exemple 3</button>
+		<button class="btn btn-primary" onclick="tryPins($('#pins').attr('value'))">Soumettre</button>
+	</div>	
+</div>
+<hr />
+<div id="comment"></div>
+<pre id="pinslist"></pre>
+<canvas id="preview" width="426" height="244"></canvas>
+{% endblock %}

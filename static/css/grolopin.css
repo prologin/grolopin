@@ -1,0 +1,55 @@
+#grolopin {
+	float: left;
+	margin-right: 10px;
+}
+
+#pinsbg {
+	position: absolute;
+	z-index: -1;
+	opacity: 0.6;
+}
+
+body {
+	padding-top: 60px;
+}
+
+#preview {
+	/* background: url('../img/pins.png') no-repeat; */
+}
+
+textarea {
+	width: 100%;
+	margin-right: 10px;
+	font-size: 1.2em;
+	font-family: Courier;
+	background: transparent;
+}
+
+#pinslist {
+	vertical-align: top;
+	display: none; /* inline-block; */
+	width: 490px;
+	font-family: Courier;
+	font-size: 1.2em;
+}
+
+pre span {
+	display: block;
+}
+
+pre span:hover {
+	color: blue;
+}
+
+pre .active {
+	color: red;
+	background: #f2dede;
+}
+
+#ranking {
+	width: 160px;
+}
+
+#ranking td {
+	padding: 5px;
+}

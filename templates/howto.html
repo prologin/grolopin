@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>GroLopin</h1>
+
+<p>Bienvenue sur GroLopin, le concours national d'agriculture.</p>
+<p class="alert alert-info">$N = 28, M = 757.$ 14/10/2012 00:30 Un bug touchant certains candidats a été réparé. <a href="/map2">En savoir plus.</a></p>
+
+<div class="well">
+	Le laboratoire d'Okabé ne cesse de compter de nouveaux membres, et il s'attache à distribuer à chacun d'eux un pin's, en respectant les contraintes suivantes :
+	<ul>
+		<li>Les pin's sont tous composés d'un engrenage de plusieurs dents dont certaines percées d'un trou.</li>
+		<li>La superposition de deux pin's quelconques doit toujours laisser apparaître un <strong>unique</strong> trou.</li>
+	</ul>
+	Vous devez afficher le plus de pin's possible qui respectent la propriété. <a href="/pins">Dépêchez-vous</a>, car vos concurrents font de même !
+</div>
+
+<img src="/static/img/demo.png" style="display: block; margin: auto" />
+
+<h3>En quoi consiste ce jeu ?</h3>
+
+<ul>
+	<li>Il faut soumettre des pin's comportant $N$ trous parmi $M$ dents (cf. tableau ci-dessous), sous la forme de chaînes de caractères composées d'espaces (ou de points, si vous préférez) et de « o ».</li>
+	<li>Deux pin's de votre ensemble doivent toujours avoir <strong>exactement un trou</strong> en commun. Par exemple, ce jeu de pin's de 2 trous parmi 3 dents est valide.
+<pre>oo
+o o
+ oo</pre></li>
+	<li>Plus vous soumettez de pin's, plus vous gagnez de lopins de terre sur <a href="/map">la carte</a>. Parfois, deux pin's suffisent à obtenir un lopin.</li>
+	<li>Le bouton <span class="label">Tester</span> vous permet de vérifier si votre jeu de pin's respecte les contraintes. En cas de validité, vous recevrez des lopins de terre.</li>
+	<li>Le premier à avoir découvert un lopin donné a son nom sur la carte.</li>
+	<li>Si vous arrivez après, vous obtiendrez quand même le lopin mais votre nom n'apparaîtra pas.</li>
+	<li>Le but du jeu est de soumettre <a href="/classement">le plus de pin's possible</a>.</li>
+</ul>
+
+<div class="row-fluid">
+<table class="table table-bordered table-condensed table-striped span5">
+<tr><th>Niveau</th><th>Nombre de trous $N$</th><th>Nombre de dents $M$ de l'engrenage</th></tr>
+<tr><td>1</td><td>3</td><td>7</td></tr>
+<tr><td>2</td><td>4</td><td>13</td></tr>
+<tr><td>3</td><td>6</td><td>31</td></tr>
+<tr><td>4</td><td>9</td><td>73</td></tr>
+</table>
+</div>
+
+<h3>Est-ce le seul moyen d'obtenir des lopins de terre ?</h3>
+
+<p><del>Non.</del> Oui. Au départ, nous comptions poster des lopins sur les sites sur lesquels nous communiquerions sur le lancement de <a href="http://prologin.org">Prologin</a> le 18 octobre, mais vous avez été trop rapides.</p>
+
+<h3>À quoi servent les lopins ?</h3>
+
+<p>C'est une excellente question. Il faut en avoir 42 fois le niveau.</p>
+
+<h3>Comment avez-vous fait les illustrations de pin's ? Ils sont vraiment super beaux.</h3>
+
+<p>Avec <strong>LaTeX</strong>. Merci.</p>
+
+<h3>Que peut-on gagner ?</h3>
+
+<p>La première personne ayant soumis le plus de pin's corrects sur <a href="/map">GATE OF STEINER</a> (<a href="/classement">arthy</a>) remportera <a href="http://googlepolicyeurope.blogspot.co.uk/2012/09/for-sale-alan-turings-monopoly.html" target="_blank">Alan Turing's Monopoly</a>.</p>
+
+<p>La première personne <strong>éligible à Prologin 2013</strong> ayant soumis le plus de pin's corrects sur <a href="/map2">FOREIGN ESTATE</a> au <strong>18 octobre à 18 h</strong> remportera un lot.</p>
+
+{% endblock %}

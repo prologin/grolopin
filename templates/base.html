@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>GroLopin</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Powered by Prologin.">
+		<meta name="author" content="Prologin">
+		
+		<link href="/static/css/bootstrap.css" rel="stylesheet">
+		<link href="/static/css/bootstrap-responsive.css" rel="stylesheet">
+		<link href="/static/css/grolopin.css" rel="stylesheet">
+		
+		<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		
+		<script src="/static/js/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+				tex2jax: {inlineMath: [["$","$"],["\\[","\\]"]]}
+			});
+		</script>
+		{% block script %}{% endblock %}
+	</head>
+	
+	<body onload="{% block init %}{% endblock %}">
+		<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+					<a class="brand" href="/">GroLopin</a>
+					<div class="nav-collapse">
+						<ul class="nav">
+							<li{% if request.path == '/' %} class="active"{% endif %}><a href="/">Règles</a></li>
+							<li{% if request.path == '/pins' %} class="active"{% endif %}><a href="/pins">Jouer</a></li>
+							<li{% if request.path == '/map' %} class="active"{% endif %}><a href="/map">GATE OF STEINER</a></li>
+							<li{% if request.path == '/map2' %} class="active"{% endif %}><a href="/map2">FOREIGN ESTATE</a></li>
+							<li{% if request.path == '/classement' %} class="active"{% endif %}><a href="/classement">Classement</a></li>
+							<li><a href="http://prologin.org/node/1480">Forum</a></li>
+							<li class="active"><a id='_pseudo' style='display:none'></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container">
+			{% block content %}{% endblock %}
+		</div>
+	</body>
+</html>

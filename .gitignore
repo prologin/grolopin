@@ -1,0 +1,6 @@
+.DS_Store
+*.json
+*.csv
+logs
+pixels
+exceptions

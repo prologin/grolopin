@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block script %}<script src="/static/js/map2.js"></script>{% endblock %}
+
+{% block content %}
+<h1>FOREIGN ESTATE</h1>
+
+<img id="map" src="/static/img/map2.png?{{ now }}" style="float: left; margin-right: 10px">
+
+<h2>$N = 28, M = 757.$</h2>
+
+<p>Vous devez uploader un fichier zip contenant un fichier texte intitulé <code>pins.txt</code> dans lequel se trouve votre jeu de pin's.</p>
+
+<p>Toute soumission incorrecte entraînera une pénalité de <strong>10 minutes</strong>, donc vérifiez bien votre jeu avant de l'envoyer ! Toute soumission correcte battant votre record de pin's vous fera remporter des lopins de la carte, mais seulement si vous êtes éligible.</p>
+
+<p>Pour que vous puissiez débloquer des lopins, il faudra que vous ayez un compte sur <a href="http://prologin.org">prologin.org</a> et que vous soyez éligible au concours, c'est-à-dire <strong>né en 1992 ou après</strong> (si l'adresse e-mail communiquée ne correspond pas à celle dans votre compte, éditez l'adresse e-mail dans votre compte ou <a href="mailto:association@prologin.org">contactez-nous</a>). Si vous ne respectez pas ces conditions, vous apparaîtrez tout de même dans le classement à titre non officiel.</p>
+
+<p>Le jeu prendra fin le <strong>18 octobre à 18 h</strong>, le vainqueur éligible remportera un lot. Il devra fournir un justificatif prouvant son année de naissance.</p>
+
+<p><strong>{{ eligibility }}</strong> Bon jeu !</p>
+
+<form enctype="multipart/form-data">        
+	<input class="btn" type="button" value="Envoyer le jeu de pin's" />
+	<div class="input-append" style="float: left; margin-right: 5px">
+		<input id="pinsCover" class="input-large" type="text" style="margin-bottom: 0"><a class="btn" onclick="$('input[id=pins]').click();">Parcourir</a>
+	</div>
+	<div id="comment" style="margin-left: 547px; margin-top: 5px"></div>
+	<input id="pins" type="file" name="pins" style="visibility: hidden">
+</form>
+
+{% endblock %}
