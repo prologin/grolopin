@@ -43,8 +43,9 @@ def load(bdd):
 		return json.load(f)
 
 def save(bdd, data):
-	with open(bdd + '.json', 'w') as f:
-		f.write(json.dumps(data))
+	pass # On a dit que le concours était terminé
+	"""with open(bdd + '.json', 'w') as f:
+		f.write(json.dumps(data))"""
 
 def retrieve_birthyear(mail):
 	p = subprocess.Popen(['mysql', '-u', 'prologin', '-p' + PASSWORD, '-D', USERNAME, '-e', QUERY % mail, '-Bs'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -304,4 +305,4 @@ if __name__ == '__main__':
 	stats = load('stats')
 	users = load('users')
 	shares = load('shares')
-	app.run(host='prologin.org', port=5000)
+	app.run(host='localhost', port=5000)

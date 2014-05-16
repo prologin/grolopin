@@ -91,7 +91,7 @@ function subPins(data)
 		data: {'submit': data},
 		success: function(data, textStatus, jqXHR) {
 			if (data == '-2')
-				update("Vous devez vous inscrire pour recevoir des lopins.", false);
+				update("Ce jeu de pin's est correct.", true);
 			else if (data == '-1')
 				update("Le jeu de pin's envoyé est incorrect.", false);
 			else if (data == '0')

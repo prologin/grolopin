@@ -39,10 +39,11 @@
 					<div class="nav-collapse">
 						<ul class="nav">
 							<li{% if request.path == '/' %} class="active"{% endif %}><a href="/">Règles</a></li>
+							<li{% if request.path == '/classement' %} class="active"{% endif %}><a href="/classement">Palmarès</a></li>
 							<li{% if request.path == '/pins' %} class="active"{% endif %}><a href="/pins">Jouer</a></li>
 							<li{% if request.path == '/map' %} class="active"{% endif %}><a href="/map">GATE OF STEINER</a></li>
 							<li{% if request.path == '/map2' %} class="active"{% endif %}><a href="/map2">FOREIGN ESTATE</a></li>
-							<li{% if request.path == '/classement' %} class="active"{% endif %}><a href="/classement">Classement</a></li>
+							<li><a href="http://bitbucket.org/prologin/grolopin/">Code sur Bitbucket</a></li>
 							<li><a href="http://prologin.org/node/1480">Forum</a></li>
 							<li class="active"><a id='_pseudo' style='display:none'></a></li>
 						</ul>
