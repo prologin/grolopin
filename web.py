@@ -284,7 +284,7 @@ def _map():
 @app.route('/map2', methods=['POST', 'GET'])
 def _map2():
 	email = getName(request.headers.get("X-Forwarded-For"))[1]
-	return Response(render_template('map2.html', eligibility=u'Vous êtes éligible.' if email and is_eligible(email) else u'Vous n\'êtes pas éligible.' or email in exceptions, now=time.time()))
+	return Response(render_template('map2.html', eligibility='', now=time.time()))  # u'Vous êtes éligible.' if email and is_eligible(email) else u'Vous n\'êtes pas éligible.' or email in exceptions
 
 @app.route('/pins', methods=['POST', 'GET'])
 def pins():
